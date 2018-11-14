@@ -1,0 +1,9 @@
+<mat-card
+  [ngClass]="'exam-card ' + (exam.reExam ? 'reExam' : 'fstExam')"
+  (click)="openBottomSheet(exam)"
+>
+  <mat-card-header>
+    <mat-card-title class="exam-title">{{ exam.anCode }}. {{ exam.name }}</mat-card-title>
+    <mat-card-subtitle class="exam-lecturer">{{ exam.lecturer.personFullName }} </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

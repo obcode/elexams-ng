@@ -26,12 +26,18 @@ import {
   MatPaginatorModule,
   MatSortModule,
   MatToolbarModule,
+  MatCardModule,
+  MatBottomSheetModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { PlanComponent } from './components/plan/plan.component';
 import { ExamlistComponent } from './components/examlist/examlist.component';
+import {
+  ExamDetailsComponent,
+  ExamDetailsBottomSheet,
+} from './components/exam-details/exam-details.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -39,7 +45,15 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, WebviewDirective, PlanComponent, ExamlistComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    WebviewDirective,
+    PlanComponent,
+    ExamlistComponent,
+    ExamDetailsComponent,
+    ExamDetailsBottomSheet,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -57,6 +71,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatPaginatorModule,
     MatSortModule,
     MatToolbarModule,
+    MatCardModule,
+    MatBottomSheetModule,
 
     TranslateModule.forRoot({
       loader: {
@@ -66,6 +82,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
+  entryComponents: [AppComponent, ExamDetailsBottomSheet],
   providers: [ElectronService],
   bootstrap: [AppComponent],
 })

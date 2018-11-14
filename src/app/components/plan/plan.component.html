@@ -1,1 +1,3 @@
-<p>plan works!</p>
+<mat-toolbar> <span>Prüfungsplan</span> </mat-toolbar>
+
+<app-exam-details *ngFor="let exam of exams" [exam]="exam"></app-exam-details>
