@@ -3,4 +3,18 @@
     <mat-card-title class="exam-title">{{ exam.anCode }}. {{ exam.name }}</mat-card-title>
     <mat-card-subtitle class="exam-lecturer">{{ exam.lecturer.personFullName }} </mat-card-subtitle>
   </mat-card-header>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngIf="exam.reExam; else: firstExam">
+        Wiederholungsklausur
+      </mat-list-item>
+      <ng-template #firstExam>
+        <mat-list-item role="listitem">Erstprüfung</mat-list-item>
+      </ng-template>
+      <mat-list-item role="listitem">
+        Angeboten für: <span *ngFor="let g of exam.groups"> {{ g.groupString }}, </span>
+      </mat-list-item>
+      <mat-list-item role="listitem"> </mat-list-item>
+    </mat-list>
+  </mat-card-content>
 </mat-card>

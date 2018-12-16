@@ -1,3 +1,20 @@
 <mat-toolbar> <span>Prüfungsplan</span> </mat-toolbar>
 
-<app-exam-details *ngFor="let exam of exams" [exam]="exam"></app-exam-details>
+<div *ngIf="slotsFilled">
+  <table>
+    <tr>
+      <td></td>
+      <td *ngFor="let examDay of examDays">{{ examDay }}</td>
+    </tr>
+    <tr *ngFor="let slot of examTimes; let slotIndex = index">
+      <td>{{ slot }}</td>
+      <td *ngFor="let day of examDays; let dayIndex = index">
+        <ul>
+          <li *ngFor="let exam of slots.get(dayIndex).get(slotIndex)">
+            <app-exam-details [exam]="exam"></app-exam-details>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>

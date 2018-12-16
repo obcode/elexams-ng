@@ -3,7 +3,21 @@
   (click)="openBottomSheet(exam)"
 >
   <mat-card-header>
-    <mat-card-title class="exam-title">{{ exam.anCode }}. {{ exam.name }}</mat-card-title>
-    <mat-card-subtitle class="exam-lecturer">{{ exam.lecturer.personFullName }} </mat-card-subtitle>
+    <mat-card-title class="exam-title"
+      >{{ exam.anCode }}. {{ exam.name }} ({{ exam.registeredStudentsCount }})
+    </mat-card-title>
+    <mat-card-subtitle class="exam-lecturer"
+      >{{ exam.lecturer.personShortName }}
+    </mat-card-subtitle>
   </mat-card-header>
+
+  <mat-card-content>
+    <span *ngIf="exam.isGOExam" class="GO">GO/GN<br /></span>
+    <span
+      *ngFor="let room of exam.rooms"
+      class="room-{{room.roomID}} {{ room.reserveRoom ? 'reserve' : '' }} {{ room.handicapCompensation ? 'NTA' : '' }} "
+    >
+      {{ room.roomID }}
+    </span>
+  </mat-card-content>
 </mat-card>

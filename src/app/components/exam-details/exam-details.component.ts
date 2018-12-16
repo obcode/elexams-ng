@@ -13,7 +13,12 @@ export class ExamDetailsComponent implements OnInit {
 
   constructor(private bottomSheet: MatBottomSheet) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.exam.isGOExam =
+      this.exam.registeredGroups.find(element => {
+        return element.registeredGroupDegree === 'GO' || element.registeredGroupDegree === 'GN';
+      }) !== undefined;
+  }
 
   openBottomSheet(exam: Exam): void {
     this.bottomSheet.open(ExamDetailsBottomSheet, { data: exam });

@@ -28,6 +28,7 @@ import {
   MatToolbarModule,
   MatCardModule,
   MatBottomSheetModule,
+  MatListModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -73,6 +74,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatToolbarModule,
     MatCardModule,
     MatBottomSheetModule,
+    MatListModule,
 
     TranslateModule.forRoot({
       loader: {

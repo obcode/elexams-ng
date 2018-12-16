@@ -1,18 +1,65 @@
+mat-card {
+  padding: 0 0 0 0;
+}
+
+mat-card-header {
+  padding: 2px 0 0 0;
+}
+
+mat-card-content {
+  font-size: 8pt;
+}
+
 .exam-card {
   width: 150px;
 }
 
 .exam-title {
   font-size: 8pt;
+  color: rgb(156, 39, 176);
+}
+.exam-groups {
+  font-size: 8pt;
 }
 .exam-lecturer {
-  font-size: 6pt;
+  font-size: 8pt;
+  color: black;
 }
 
 .fstExam {
-  background-color: #f0f4c3;
+  background-color: rgb(205, 220, 57);
 }
 
 .reExam {
-  background-color: #b2ebf2;
+  background-color: rgb(188, 238, 242);
+}
+
+.GO {
+  background-color: rgb(224, 224, 224);
+}
+
+// Rooms
+
+.room-R1\.046 {
+  background-color: rgb(239, 83, 80);
+}
+
+.room-R1\.049 {
+  background-color: rgb(66, 165, 245);
+}
+
+.NTA {
+  background-color: rgb(225, 158, 237);
+}
+
+.reserve {
+  background-color: rgb(161, 136, 127);
+}
+
+ul.groups {
+  li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
 }
